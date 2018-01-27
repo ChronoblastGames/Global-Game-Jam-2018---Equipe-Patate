@@ -35,7 +35,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortionTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 013b8ee2a89873b46a55c13387481397, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -59,11 +59,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ScanlineTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3d5334446a424a9498c80b49a6496c0f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _StaticTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: def60ae040f9ed649b8962cdd8d8cbf1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -74,10 +74,10 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IntensityofJitterPanning: 0.1495596
-    - _IntensityofSaticPanning: 0.902277
-    - _IntensityofStatic: 0.02564103
-    - _Intensityofjitter: 0.3375902
+    - _IntensityofJitterPanning: 0.062
+    - _IntensityofSaticPanning: 0.4
+    - _IntensityofStatic: 1
+    - _Intensityofjitter: 0.077
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -85,9 +85,9 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TransparencyOfScanline: 0.7361153
+    - _TransparencyOfScanline: 0.772
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
