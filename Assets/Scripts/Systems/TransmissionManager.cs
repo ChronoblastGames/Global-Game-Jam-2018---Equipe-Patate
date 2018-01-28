@@ -42,6 +42,7 @@ public class TransmissionManager : MonoBehaviour
     private void UpdatePlayerDistance()
     {
         playerDistanceFromOrigin = Vector3.Distance(Vector3.zero + Vector3.up, targetPlayer.transform.position);
+        playerDistanceFromOrigin *= 10f;
     }
 
     public float ReturnTotalTransmissionTime()
