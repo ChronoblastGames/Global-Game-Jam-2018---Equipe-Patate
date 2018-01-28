@@ -28,7 +28,7 @@ public class ObstacleSpawnManager : MonoBehaviour {
 	}
 
     void SpawnObject() {
-        spawnedObstacle = Instantiate(obstacleList[Random.Range(0, (obstacleList.Length -1))]);
+        spawnedObstacle = Instantiate(obstacleList[Random.Range(0, (obstacleList.Length))]);
         SetSpawnLocation(spawnedObstacle);
         //spawnedObstacle.GetComponent<Asteroid>().obstacleTrajectoryDirection
     }
