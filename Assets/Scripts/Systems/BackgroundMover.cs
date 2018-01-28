@@ -21,6 +21,9 @@ public class BackgroundMover : MonoBehaviour
     [Space(10)]
     public bool canScroll = true;
 
+    [Space(10)]
+    public bool isBackgroundLayer;
+
     private void Start()
     {
         InitializeBackground();

@@ -9,6 +9,8 @@ public class SatelliteInputController : MonoBehaviour
     private TransmissionManager transmissionManager;
 
     [Header("Player Input Attributess")]
+    public Camera targetCamera;
+
     public Vector2 playerMouseInput;
 
     [Space(10)]
@@ -76,7 +78,7 @@ public class SatelliteInputController : MonoBehaviour
     {
         Vector3 newPlayerMousePosition = Vector3.zero;
 
-        Ray newMousePointRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray newMousePointRay = targetCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit newMouseRayHit;
 
         if (Physics.Raycast(newMousePointRay, out newMouseRayHit, backgroundMask))
