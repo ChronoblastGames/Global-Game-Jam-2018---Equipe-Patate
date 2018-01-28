@@ -107,3 +107,15 @@ public enum SATELLITE_COMMAND_TYPE
 
 #endregion
 
+#region PLAYER_CAMERA
+
+public enum PLAYER_CAMERA_STATE
+{
+    NONE,
+    MAIN_SCREEN,
+    ZOOM_OUT,
+    RADAR
+}
+
+#endregion
+

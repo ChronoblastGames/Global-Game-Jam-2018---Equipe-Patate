@@ -8,7 +8,8 @@ public class SatelliteInputController : MonoBehaviour
     private SatelliteInputManager inputManager;
     private TransmissionManager transmissionManager;
 
-    [Header("Player Input Attributess")]
+    [Header("Player Input Attributes")]
+    public Camera mainCamera;
     public Camera targetCamera;
 
     public Vector2 playerMouseInput;
@@ -20,6 +21,7 @@ public class SatelliteInputController : MonoBehaviour
     public float mouseHitPointVerticalAdjust = 1f;
 
     [Space(10)]
+    public LayerMask screenMask;
     public LayerMask backgroundMask;
 
     private void Start()
@@ -61,7 +63,7 @@ public class SatelliteInputController : MonoBehaviour
 
         playerController.SetMousePosition(playerMousePosition);
     }
-
+ 
     private void SendNewMovePosition()
     {
         InputCommand newCommand = CreateNewCommand(SATELLITE_COMMAND_TYPE.MOVE, transmissionManager.ReturnTotalTransmissionTime(), playerMousePosition);
@@ -77,14 +79,22 @@ public class SatelliteInputController : MonoBehaviour
     private Vector3 ReturnPlayerMousePositionInWorld()
     {
         Vector3 newPlayerMousePosition = Vector3.zero;
+        Vector3 texCoordHitVec = Vector3.zero;
 
-        Ray newMousePointRay = targetCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit newMouseRayHit;
+        Ray newRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit newRayHit;
 
-        if (Physics.Raycast(newMousePointRay, out newMouseRayHit, backgroundMask))
+        if (Physics.Raycast(newRay, out newRayHit, screenMask))
         {
-            newPlayerMousePosition = newMouseRayHit.point;
-            newPlayerMousePosition.Set(newPlayerMousePosition.x, mouseHitPointVerticalAdjust, newPlayerMousePosition.z);
+            texCoordHitVec = newRayHit.textureCoord;
+
+            Ray secondRay = targetCamera.ViewportPointToRay(texCoordHitVec);
+
+            if (Physics.Raycast(secondRay, out newRayHit, backgroundMask))
+            {
+                newPlayerMousePosition = newRayHit.point;
+                newPlayerMousePosition.y = mouseHitPointVerticalAdjust;
+            }
         }
 
         return newPlayerMousePosition;
