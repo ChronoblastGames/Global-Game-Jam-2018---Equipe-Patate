@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - TransmissionManager
+  - Background
+  - GameplayCamera
   layers:
   - Default
   - TransparentFX
