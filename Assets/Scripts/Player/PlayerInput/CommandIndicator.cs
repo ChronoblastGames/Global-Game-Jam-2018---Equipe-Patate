@@ -22,13 +22,15 @@ public class CommandIndicator : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-    public void SetIndictor(Vector3 start, Vector3 end)
+    public void SetIndicatorPoints(Vector3 startPoint, Vector3 endPoint)
     {
-        commandStartPoint = start;
-        commandEndPoint = end;
+        lineRenderer.positionCount = 2;
+
+        commandStartPoint = Vector3.zero;
+        commandEndPoint = transform.InverseTransformPoint(endPoint + Vector3.up); 
 
         lineRenderer.SetPosition(0, commandStartPoint);
-        lineRenderer.SetPosition(1, commandEndPoint);
+        lineRenderer.SetPosition(1, endPoint);
     }
 
     public void DestroyIndicator()

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SatellitePlayerController : MonoBehaviour 
 {
+    private BackgroundMover backgroundMover;
+
     [Header("Player Attributes")]
     private Vector3 mouseWorldPosition = Vector3.zero;
 
@@ -20,10 +22,20 @@ public class SatellitePlayerController : MonoBehaviour
 
     private Vector3 targetRotationPosition = Vector3.zero;
 
+    private void Start()
+    {
+        InitializePlayer();
+    }
+
     private void Update()
     {
         ManageMovement();
         ManageRotation();
+    }
+
+    private void InitializePlayer()
+    {
+        backgroundMover = GameObject.FindGameObjectWithTag("Background").GetComponent<BackgroundMover>();
     }
 
     public void SetMousePosition(Vector3 newMousePosition)
@@ -57,6 +69,8 @@ public class SatellitePlayerController : MonoBehaviour
         Vector3 targetPosition = (targetMousePosition - transform.position).normalized;
 
         targetMovePosition = targetMousePosition;
+
+        backgroundMover.SetNewTargetDirection(targetPosition);
     }
 
     public void SetNewRotationPosition(Vector3 newTargetRotationPosition)
