@@ -45,6 +45,9 @@ public class SatelliteInputManager : MonoBehaviour
                 //Do the Command, Remove it from list
                 PassOffInput(inputCommands[0]);
 
+                commandIndicators[0].DestroyIndicator();
+
+                commandIndicators.Remove((commandIndicators[0]));
                 inputCommands.Remove(inputCommands[0]);
             }
         }
@@ -80,5 +83,7 @@ public class SatelliteInputManager : MonoBehaviour
         GameObject newIndicator = Instantiate(commandIndicatorPrefab, satellitePlayerController.transform.position + Vector3.up, Quaternion.identity) as GameObject;
         CommandIndicator indicator = newIndicator.GetComponent<CommandIndicator>();
         indicator.SetIndicatorPoints(indicator.transform.position, newCommand.mouseInput);
+
+        commandIndicators.Add(indicator);
     }
 }
