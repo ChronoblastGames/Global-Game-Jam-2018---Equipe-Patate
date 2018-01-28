@@ -22,7 +22,7 @@ public class BackgroundMover : MonoBehaviour
     public bool canScroll = true;
 
     [Space(10)]
-    public bool isBackgroundLayer;
+    public bool isBackgroundLayer = false;
 
     private void Start()
     {
@@ -51,7 +51,20 @@ public class BackgroundMover : MonoBehaviour
 
     private void ScrollBackground()
     {
-        transform.position = targetTransform.position + Vector3.down;
+        if (isBackgroundLayer)
+        {
+            Vector3 targetPosition = targetTransform.position;
+            targetPosition.y = 1f;
+
+            transform.position = targetPosition;
+        }
+        else
+        {
+            Vector3 targetPosition = targetTransform.position;
+            targetPosition.y = 0f;
+
+            transform.position = targetPosition;
+        }
 
         if (canScroll)
         {

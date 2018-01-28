@@ -53,12 +53,8 @@ public class PlayerCameraController : MonoBehaviour
                     {
                         switch (playerCameraState)
                         {
-                            case PLAYER_CAMERA_STATE.ZOOM_OUT:
-                                TransitionToMainScreen();
-                                break;
-
                             case PLAYER_CAMERA_STATE.RADAR:
-                                TransitionToZoomOut();
+                                TransitionToMainScreen();
                                 break;
                         }
                     }
@@ -67,10 +63,6 @@ public class PlayerCameraController : MonoBehaviour
                         switch (playerCameraState)
                         {
                             case PLAYER_CAMERA_STATE.MAIN_SCREEN:
-                                TransitionToZoomOut();
-                                break;
-
-                            case PLAYER_CAMERA_STATE.ZOOM_OUT:
                                 TransitionToRadar();
                                 break;
                         }
