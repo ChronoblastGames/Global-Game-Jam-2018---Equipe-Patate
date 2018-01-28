@@ -77,6 +77,17 @@ public class SatellitePlayerController : MonoBehaviour
     {
         targetRotationPosition = newTargetRotationPosition;
     }
+
+    public void PlayerDeath()
+    {
+        Debug.Log("Player Death");
+    }
+
+    private void PlayerReset()
+    {
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+    }
 }
 
 [System.Serializable]

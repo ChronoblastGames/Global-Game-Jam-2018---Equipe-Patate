@@ -65,7 +65,9 @@ public class Asteroid : MonoBehaviour
     {
         if (other.gameObject.CompareTag(("Player")))
         {
-            Debug.Log("Hit Player");
+            SatellitePlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<SatellitePlayerController>();
+
+            player.PlayerDeath();
         }
     }
 }

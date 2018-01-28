@@ -28,6 +28,9 @@ public class ObstacleSpawnManager : MonoBehaviour
     [Space(10)]
     public float obstacleMaxDistance = 200f;
 
+    [Space(10)]
+    public bool canSpawnObstacles = true;
+
     private void Start()
     {
         InitializeObstacleManager();
@@ -36,7 +39,6 @@ public class ObstacleSpawnManager : MonoBehaviour
     private void Update()
     {
         ManageActiveObstacles();
-        DestroyOutOfBoundsObstacles();
     }
 
     private void InitializeObstacleManager()
@@ -51,9 +53,12 @@ public class ObstacleSpawnManager : MonoBehaviour
 
     private void PrepareNextObstacle()
     {
-        float nextObstacleSpawnTime = ReturnRandomObstacleSpawnTime();
+        if (canSpawnObstacles)
+        {
+            float nextObstacleSpawnTime = ReturnRandomObstacleSpawnTime();
 
-        StartCoroutine(SpawnObstacleAfterTime(nextObstacleSpawnTime));
+            StartCoroutine(SpawnObstacleAfterTime(nextObstacleSpawnTime));
+        }
     }
 
     private IEnumerator SpawnObstacleAfterTime(float waitTime)
@@ -121,21 +126,31 @@ public class ObstacleSpawnManager : MonoBehaviour
     {
         if (activeObstacleList.Count > 0)
         {
-            foreach (GameObject obstacle in activeObstacleList)
+            for (int i = activeObstacleList.Count - 1; i >= 0; i--)
             {
-                if (Vector3.Distance(playerCharacter.transform.position, obstacle.transform.position) > obstacleMaxDistance)
+                if (Vector3.Distance(playerCharacter.transform.position, activeObstacleList[i].transform.position) > obstacleMaxDistance)
                 {
-                    toBeRemovedObjects.Add(obstacle);
+                    toBeRemovedObjects.Add(activeObstacleList[i]);
 
-                    activeObstacleList.Remove(obstacle);
+                    activeObstacleList.Remove(activeObstacleList[i]);
                 }
             }
+        }
+
+        DestroyOutOfBoundsObstacles();
+    }
+
+    public void ResetAllObstacles()
+    {
+        for (int i = activeObstacleList.Count - 1; i >= 0; i--)
+        {
+            Destroy(activeObstacleList[i]);
         }
     }
 
     private void DestroyOutOfBoundsObstacles()
     {
-        if (toBeRemovedObjects.Count > 0)
+        if (toBeRemovedObjects.Count > 1)
         {
             for (int i = toBeRemovedObjects.Count - 1; i >= 0; i--)
             {

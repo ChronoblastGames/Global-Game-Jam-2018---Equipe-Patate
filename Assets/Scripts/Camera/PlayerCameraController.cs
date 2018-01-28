@@ -13,14 +13,13 @@ public class PlayerCameraController : MonoBehaviour
     private Vector3 cameraDragPosition;
 
     [Header("Camera Points")]
-    public Transform[] cameraPoints;
+    public Transform[] cameraPoints = new Transform[2];
 
     [Header("Camera Transition Attributes")]
     public IEnumerator currentCoroutine = null;
 
     [Space(10)]
     public float transitionTimeToMainScreen = 1f;
-    public float transitionTimeToZoomOut = 1f;
     public float transitionTimeToRadar = 1f;
 
     [Space(10)]
@@ -97,20 +96,6 @@ public class PlayerCameraController : MonoBehaviour
         StartCoroutine(currentCoroutine);
     }
 
-    private void TransitionToZoomOut()
-    {
-        if (currentCoroutine != null)
-        {
-            StopCoroutine(currentCoroutine);
-        }
-
-        currentCoroutine = MoveToPosition(cameraPoints[1], transitionTimeToZoomOut, false, true);
-
-        playerCameraState = PLAYER_CAMERA_STATE.ZOOM_OUT;
-
-        StartCoroutine(currentCoroutine);
-    }
-
     private void TransitionToRadar()
     {
         if (currentCoroutine != null)
@@ -118,7 +103,7 @@ public class PlayerCameraController : MonoBehaviour
             StopCoroutine(currentCoroutine);
         }
 
-        currentCoroutine = MoveToPosition(cameraPoints[2], transitionTimeToRadar, false, false);
+        currentCoroutine = MoveToPosition(cameraPoints[1], transitionTimeToRadar, false, false);
 
         playerCameraState = PLAYER_CAMERA_STATE.RADAR;
 
