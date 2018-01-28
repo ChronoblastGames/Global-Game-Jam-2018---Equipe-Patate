@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 223768355671417542}
   - component: {fileID: 114202825301965634}
   - component: {fileID: 114851033559890292}
-  - component: {fileID: 114775047879354804}
   - component: {fileID: 114113442653750472}
   m_Layer: 11
   m_Name: Canvas
@@ -40,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4810045708863000}
   - component: {fileID: 33073521879784348}
+  - component: {fileID: 64349469709919550}
   - component: {fileID: 23393093043783474}
   - component: {fileID: 114787833664841828}
   m_Layer: 0
@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1463615712404566}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7101, y: 0.3653, z: -1.4244}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10.98397, y: 10.983955, z: 10.983955}
   m_Children:
   - {fileID: 224466371565380062}
@@ -121,6 +121,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1463615712404566}
   m_Mesh: {fileID: 4300004, guid: f4ba4731b1d09214e9808629ce29990f, type: 3}
+--- !u!64 &64349469709919550
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1463615712404566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300004, guid: f4ba4731b1d09214e9808629ce29990f, type: 3}
 --- !u!114 &114113442653750472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,17 +167,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114775047879354804
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1413202496108156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114787833664841828
 MonoBehaviour:
   m_ObjectHideFlags: 1

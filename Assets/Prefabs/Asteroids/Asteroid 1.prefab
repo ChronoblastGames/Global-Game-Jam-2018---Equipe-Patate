@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 223139910805610320}
   - component: {fileID: 114291185842384584}
   - component: {fileID: 114495264797123872}
-  - component: {fileID: 114049054437348382}
   - component: {fileID: 114352474494375306}
   m_Layer: 11
   m_Name: Canvas
@@ -41,6 +40,7 @@ GameObject:
   - component: {fileID: 4207790901749786}
   - component: {fileID: 33671069617872434}
   - component: {fileID: 23059871057730202}
+  - component: {fileID: 64133805606248058}
   - component: {fileID: 114887345913547366}
   m_Layer: 0
   m_Name: Asteroid 1
@@ -121,17 +121,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1387073757455004}
   m_Mesh: {fileID: 4300000, guid: f4ba4731b1d09214e9808629ce29990f, type: 3}
---- !u!114 &114049054437348382
-MonoBehaviour:
+--- !u!64 &64133805606248058
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1193419560048732}
+  m_GameObject: {fileID: 1387073757455004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: f4ba4731b1d09214e9808629ce29990f, type: 3}
 --- !u!114 &114291185842384584
 MonoBehaviour:
   m_ObjectHideFlags: 1
