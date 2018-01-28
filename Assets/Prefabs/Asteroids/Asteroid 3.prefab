@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 64721639571642942}
   - component: {fileID: 23928054198969496}
   - component: {fileID: 114240089312808284}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Asteroid 3
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 224124391247106530}
   - component: {fileID: 222543565419895510}
   - component: {fileID: 114445804170668740}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114508556025718818}
   - component: {fileID: 114964511351080824}
   - component: {fileID: 114288949349925950}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
