@@ -24,11 +24,11 @@ public class CommandIndicator : MonoBehaviour
 
     public void SetIndicatorPoints(Vector3 startPoint, Vector3 endPoint)
     {
-        Transform firstPoint = transform.GetChild(0);
-        Transform secondPoint = transform.GetChild(1);
+        Vector3[] linePoints = new Vector3[2] { startPoint, endPoint };
 
-        firstPoint.position = startPoint;
-        secondPoint.position = endPoint;
+        lineRenderer = GetComponent<LineRenderer>();
+
+        lineRenderer.SetPositions(linePoints);
     }
 
     public void DestroyIndicator()

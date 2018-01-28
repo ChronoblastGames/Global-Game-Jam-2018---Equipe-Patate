@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114291185842384584}
   - component: {fileID: 114495264797123872}
   - component: {fileID: 114049054437348382}
-  - component: {fileID: 54457788632738506}
+  - component: {fileID: 114352474494375306}
   m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114887345913547366}
   m_Layer: 0
   m_Name: Asteroid 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,21 +121,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1387073757455004}
   m_Mesh: {fileID: 4300000, guid: f4ba4731b1d09214e9808629ce29990f, type: 3}
---- !u!54 &54457788632738506
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1193419560048732}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!114 &114049054437348382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,6 +153,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114352474494375306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1193419560048732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb67a3c8763162248bba66ab6eb87787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114495264797123872
 MonoBehaviour:
   m_ObjectHideFlags: 1
