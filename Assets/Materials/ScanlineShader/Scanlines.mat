@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ScanlineTexture:
-        m_Texture: {fileID: 2800000, guid: 5d9599a3fa3b0ad4cb21562b3028954c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 76dd45c140a482e45975057b79f72324, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _StaticTexture:
@@ -85,7 +85,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TransparencyOfScanline: 0.75
+    - _TransparencyOfScanline: 0.855
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
