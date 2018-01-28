@@ -32,6 +32,7 @@ public class SatelliteInputManager : MonoBehaviour
 
     public void ReceiveNewCommand(InputCommand newCommand)
     {
+        CreateNewIndicator(newCommand);
         inputCommands.Add(newCommand);
     }
 
@@ -79,6 +80,5 @@ public class SatelliteInputManager : MonoBehaviour
         GameObject newIndicator = Instantiate(commandIndicatorPrefab, satellitePlayerController.transform.position + Vector3.up, Quaternion.identity) as GameObject;
         CommandIndicator indicator = newIndicator.GetComponent<CommandIndicator>();
         indicator.SetIndicatorPoints(indicator.transform.position, newCommand.mouseInput);
-        commandIndicators.Add(indicator);
     }
 }
