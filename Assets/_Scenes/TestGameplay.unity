@@ -2385,7 +2385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTransmissionTime: 0
-  transmissionFractional: 1000
+  transmissionFractional: 750
   targetPlayer: {fileID: 1075829973}
   playerDistanceFromOrigin: 0
 --- !u!4 &661674538
@@ -5998,6 +5998,11 @@ Prefab:
       propertyPath: targetCamera
       value: 
       objectReference: {fileID: 1296620920}
+    - target: {fileID: 114300730405312708, guid: d5fc928a6638c408cb7b9f16e6eca8ee,
+        type: 2}
+      propertyPath: playerMovementValues.playerMoveSmoothTime
+      value: 0.85
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5fc928a6638c408cb7b9f16e6eca8ee, type: 2}
   m_IsPrefabParent: 0

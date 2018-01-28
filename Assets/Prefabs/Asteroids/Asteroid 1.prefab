@@ -73,8 +73,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1387073757455004}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.58, z: 2.955}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 224393228398090386}
   m_Father: {fileID: 0}
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleMovementValues:
-    obstacleMoveSpeed: 10
+    obstacleMoveSpeed: 15
     obstacleSpinSpeed: 10
   obstacleTrajectoryDirection: {x: 0, y: 0, z: 0}
   canObstacleMove: 1

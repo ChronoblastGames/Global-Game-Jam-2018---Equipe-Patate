@@ -16,19 +16,6 @@ public class GameUI : MonoBehaviour
 
     public CameraFadeAttributes cam;
 
-    private void Awake()
-    {
-        if (gameUi == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            gameUi = this;
-        }
-        else if (gameUi != this)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void Start()
     {
         if (SceneManager.sceneCount == 0) //Main Menu
@@ -73,7 +60,7 @@ public class GameUI : MonoBehaviour
         yield return new WaitForSeconds(3f);
         introTextScreen.SetActive(true);
         print("Debug: Loading...");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(15f);
         print("Debug: Now in gameplay!");
         introTextScreen.SetActive(false);
         SceneManager.LoadScene(1); //Main 
