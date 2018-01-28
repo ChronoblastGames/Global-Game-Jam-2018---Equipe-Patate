@@ -8,6 +8,7 @@ TagManager:
   - TransmissionManager
   - Background
   - GameplayCamera
+  - RadarElement
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,8 @@ TagManager:
   - Player
   - Obstacles
   - Background
-  - 
+  - RadarElements
+  - MainScreen
   - 
   - 
   - 
