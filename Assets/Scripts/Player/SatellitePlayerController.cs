@@ -3,18 +3,22 @@ using UnityEngine;
 
 public class SatellitePlayerController : MonoBehaviour 
 {
+    [Header("Player Attributes")]
+    private Vector3 mouseWorldPosition = Vector3.zero;
+
     [Header("Player Movement Attributes")]
     public PlayerMovementValues playerMovementValues;
 
     private Vector3 playerMoveSmoothVelocity;
 
-    private Vector3 mouseWorldPosition = Vector3.zero;
     private Vector3 targetMovePosition = Vector3.zero;
 
     [Header("Player Rotation Attributes")]
     public PlayerRotationValues playerRotationValues;
 
     private float playerRotateSmoothVelocity;
+
+    private Vector3 targetRotationPosition = Vector3.zero;
 
     private void Update()
     {
@@ -39,7 +43,7 @@ public class SatellitePlayerController : MonoBehaviour
 
     private void ManageRotation()
     {
-        Vector3 lookDirection = (mouseWorldPosition - transform.position).normalized;
+        Vector3 lookDirection = (targetRotationPosition - transform.position).normalized;
 
         float targetRotation = Mathf.Atan2(lookDirection.x, lookDirection.z) * Mathf.Rad2Deg;
 
@@ -53,6 +57,11 @@ public class SatellitePlayerController : MonoBehaviour
         Vector3 targetPosition = (targetMousePosition - transform.position).normalized;
 
         targetMovePosition = targetMousePosition;
+    }
+
+    public void SetNewRotationPosition(Vector3 newTargetRotationPosition)
+    {
+        targetRotationPosition = newTargetRotationPosition;
     }
 }
 
