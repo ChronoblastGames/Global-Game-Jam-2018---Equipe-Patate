@@ -57,7 +57,7 @@ public class Asteroid : MonoBehaviour
     {
         if (canObstacleMove)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + (obstacleMovementValues.obstacleSpinSpeed * obstacleSpinDirection) * Time.deltaTime, transform.eulerAngles.z);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + (obstacleMovementValues.obstacleSpinSpeed * Random.Range(-1,1) * obstacleSpinDirection) * Time.deltaTime, transform.rotation.eulerAngles.y + (obstacleMovementValues.obstacleSpinSpeed * Random.Range(-1, 1) * obstacleSpinDirection) * Time.deltaTime, transform.eulerAngles.z + (obstacleMovementValues.obstacleSpinSpeed * Random.Range(-1, 1) * obstacleSpinDirection) * Time.deltaTime);
         }
     }
 
