@@ -854,6 +854,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 185058264}
   m_Mesh: {fileID: 4300100, guid: 38859400f6c12b846af44383f2acaa3b, type: 3}
+--- !u!114 &187798957 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114272177193926638, guid: b95821b87952e4eb7b1434ede8a143a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1736009199}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &189413429 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4281217285990756, guid: 6d3c8fbf0be9b4b42a25c7f25cae0997,
@@ -3032,6 +3038,12 @@ Transform:
   m_Father: {fileID: 821563185}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &876071484 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114793696150401780, guid: b95821b87952e4eb7b1434ede8a143a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1736009199}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &925983431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3422,6 +3434,12 @@ Transform:
   m_Father: {fileID: 35079706}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1023256119 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114453279082813116, guid: b95821b87952e4eb7b1434ede8a143a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1736009199}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1063440328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5407,6 +5425,27 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2093116990}
+    - target: {fileID: 1634068122850336, guid: b95821b87952e4eb7b1434ede8a143a8, type: 2}
+      propertyPath: m_Name
+      value: TimeText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026399526066234, guid: b95821b87952e4eb7b1434ede8a143a8, type: 2}
+      propertyPath: m_Name
+      value: DistanceText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178662600298166, guid: b95821b87952e4eb7b1434ede8a143a8, type: 2}
+      propertyPath: m_Name
+      value: ScoreText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826871531919690, guid: b95821b87952e4eb7b1434ede8a143a8, type: 2}
+      propertyPath: m_Name
+      value: SpeedTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 114501604520330538, guid: b95821b87952e4eb7b1434ede8a143a8,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b95821b87952e4eb7b1434ede8a143a8, type: 2}
   m_IsPrefabParent: 0
@@ -5545,6 +5584,31 @@ Transform:
   m_Father: {fileID: 1180215861}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: 180, z: 0}
+--- !u!1 &1778047095 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1642058698664302, guid: b95821b87952e4eb7b1434ede8a143a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1736009199}
+--- !u!114 &1778047100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778047095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95f0346db4c146f781be3cdfd043ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transmission: {fileID: 0}
+  playerScoreText: {fileID: 1023256119}
+  distanceFromHomeText: {fileID: 876071484}
+  timerText: {fileID: 187798957}
+  playerScore: 0
+  timer: 0
+  seconds: 0
+  minutes: 0
+  hours: 0
 --- !u!1 &1785368357
 GameObject:
   m_ObjectHideFlags: 0

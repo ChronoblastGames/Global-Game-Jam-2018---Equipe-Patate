@@ -154,7 +154,10 @@ public class ObstacleSpawnManager : MonoBehaviour
         {
             for (int i = toBeRemovedObjects.Count - 1; i >= 0; i--)
             {
-                Debug.Log("Obstacle Exceeded Max Range :: Destroying :: " + toBeRemovedObjects[i]);
+                if (toBeRemovedObjects[i] == null)
+                {
+                    return;
+                }
 
                 Destroy(toBeRemovedObjects[i]);
             }
