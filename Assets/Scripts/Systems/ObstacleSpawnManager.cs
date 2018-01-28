@@ -6,7 +6,14 @@ public class ObstacleSpawnManager : MonoBehaviour
 {
     [Header("Obstacles")]
     public GameObject playerCharacter;
-    public GameObject[] obstacleList;
+
+    [Space(10)]
+    public Transform obstacleHolder;
+
+    [Space(10)]
+    public GameObject[] obstaclePrefabs;
+    public List<GameObject> activeObstacleList = new List<GameObject>();
+    private List<GameObject> toBeRemovedObjects = new List<GameObject>();
 
     GameObject spawnedObstacle;
 
@@ -18,13 +25,27 @@ public class ObstacleSpawnManager : MonoBehaviour
     public float spawnDistanceMax;
     public float spawnDistanceMin;
 
+    [Space(10)]
+    public float obstacleMaxDistance = 200f;
+
     private void Start()
     {
         InitializeObstacleManager();
     }
 
+    private void Update()
+    {
+        ManageActiveObstacles();
+        DestroyOutOfBoundsObstacles();
+    }
+
     private void InitializeObstacleManager()
     {
+        if (playerCharacter == null)
+        {
+            playerCharacter = GameObject.FindGameObjectWithTag("Player");
+        }
+
         PrepareNextObstacle();
     }
 
@@ -48,8 +69,10 @@ public class ObstacleSpawnManager : MonoBehaviour
 
     void SpawnObject() 
     {
-        spawnedObstacle = Instantiate(obstacleList[Random.Range(0, (obstacleList.Length))]);
+        spawnedObstacle = Instantiate(obstaclePrefabs[Random.Range(0, (obstaclePrefabs.Length))], obstacleHolder);
         SetSpawnLocation(spawnedObstacle);
+
+        activeObstacleList.Add(spawnedObstacle);
     }
 
     void SetSpawnLocation(GameObject objectToPosition) 
@@ -92,6 +115,35 @@ public class ObstacleSpawnManager : MonoBehaviour
     private float ReturnRandomObstacleSpawnTime()
     {
         return Random.Range(baseSpawnTimeMin, baseSpawnTimeMax);
+    }
+
+    private void ManageActiveObstacles()
+    {
+        if (activeObstacleList.Count > 0)
+        {
+            foreach (GameObject obstacle in activeObstacleList)
+            {
+                if (Vector3.Distance(playerCharacter.transform.position, obstacle.transform.position) > obstacleMaxDistance)
+                {
+                    toBeRemovedObjects.Add(obstacle);
+
+                    activeObstacleList.Remove(obstacle);
+                }
+            }
+        }
+    }
+
+    private void DestroyOutOfBoundsObstacles()
+    {
+        if (toBeRemovedObjects.Count > 0)
+        {
+            for (int i = toBeRemovedObjects.Count - 1; i >= 0; i--)
+            {
+                Debug.Log("Obstacle Exceeded Max Range :: Destroying :: " + toBeRemovedObjects[i]);
+
+                Destroy(toBeRemovedObjects[i]);
+            }
+        }
     }
     
 }

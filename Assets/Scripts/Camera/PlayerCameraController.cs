@@ -26,9 +26,20 @@ public class PlayerCameraController : MonoBehaviour
     [Space(10)]
     public bool isTransitioning = false;
 
+    private void Start()
+    {
+        InitializeCamera();
+    }
+
     private void Update()
     {
         ReadInput();
+    }
+
+    private void InitializeCamera()
+    {
+        transform.position = cameraPoints[0].transform.position;
+        transform.rotation = cameraPoints[0].transform.rotation;
     }
 
     private void ReadInput()
