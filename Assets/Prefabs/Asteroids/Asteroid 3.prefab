@@ -74,7 +74,7 @@ Transform:
   m_GameObject: {fileID: 1592926618572044}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30.754625, y: 30.754683, z: 30.754683}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 224403981981898438}
   m_Father: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleMovementValues:
-    obstacleMoveSpeed: 5
+    obstacleMoveSpeed: 4
     obstacleSpinSpeed: 5
   obstacleTrajectoryDirection: {x: 0, y: 0, z: 0}
   canObstacleMove: 1

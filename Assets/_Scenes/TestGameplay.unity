@@ -6811,7 +6811,7 @@ Prefab:
     - target: {fileID: 114460042572559938, guid: bc60de2173e415c4b94fac3de8da159c,
         type: 2}
       propertyPath: baseSpawnTimeMax
-      value: 1.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 114460042572559938, guid: bc60de2173e415c4b94fac3de8da159c,
         type: 2}
@@ -6835,6 +6835,12 @@ Prefab:
       propertyPath: obstaclePrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 1592926618572044, guid: 8c63201fe47bc63428e55128e27bab7b,
+        type: 2}
+    - target: {fileID: 114460042572559938, guid: bc60de2173e415c4b94fac3de8da159c,
+        type: 2}
+      propertyPath: obstaclePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1900671091416348, guid: e81b06ece59a7492c9aaa2d39b807d0a,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc60de2173e415c4b94fac3de8da159c, type: 2}

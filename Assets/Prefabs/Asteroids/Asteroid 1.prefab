@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleMovementValues:
-    obstacleMoveSpeed: 15
+    obstacleMoveSpeed: 7
     obstacleSpinSpeed: 10
   obstacleTrajectoryDirection: {x: 0, y: 0, z: 0}
   canObstacleMove: 1
