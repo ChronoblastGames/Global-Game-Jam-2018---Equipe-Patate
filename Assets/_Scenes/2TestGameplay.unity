@@ -894,7 +894,12 @@ Prefab:
     - target: {fileID: 114901270247323750, guid: cb4f8002d29daec4b83df47811234f02,
         type: 2}
       propertyPath: obstacleMovementValues.obstacleSpinSpeed
-      value: 50
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114901270247323750, guid: cb4f8002d29daec4b83df47811234f02,
+        type: 2}
+      propertyPath: obstacleMovementValues.obstacleMoveSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb4f8002d29daec4b83df47811234f02, type: 2}
