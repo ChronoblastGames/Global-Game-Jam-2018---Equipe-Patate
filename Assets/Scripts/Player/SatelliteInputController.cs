@@ -5,6 +5,8 @@ using UnityEngine;
 public class SatelliteInputController : MonoBehaviour 
 {
     private SatellitePlayerController playerController;
+    private SatelliteInputManager inputManager;
+    private TransmissionManager transmissionManager;
 
     [Header("Player Input Attributess")]
     public Vector2 playerMouseInput;
@@ -31,6 +33,10 @@ public class SatelliteInputController : MonoBehaviour
     private void InitializeInput()
     {
         playerController = GetComponent<SatellitePlayerController>();
+
+        inputManager = GetComponent<SatelliteInputManager>();
+
+        transmissionManager = GameObject.FindGameObjectWithTag(("TransmissionManager")).GetComponent<TransmissionManager>();
     }
 
     private void GetInput()
@@ -43,6 +49,8 @@ public class SatelliteInputController : MonoBehaviour
         {
             SendNewMovePosition();
         }
+
+        SendNewRotationPosition();
     }
 
     private void GetPlayerMousePosition()
@@ -54,7 +62,14 @@ public class SatelliteInputController : MonoBehaviour
 
     private void SendNewMovePosition()
     {
-        playerController.SetNewMovePosition(playerMousePosition);
+        InputCommand newCommand = CreateNewCommand(SATELLITE_COMMAND_TYPE.MOVE, transmissionManager.ReturnTotalTransmissionTime(), playerMousePosition);
+
+        inputManager.ReceiveNewCommand(newCommand);
+    }
+
+    private void SendNewRotationPosition()
+    {
+        playerController.SetNewRotationPosition(playerMousePosition);
     }
 
     private Vector3 ReturnPlayerMousePositionInWorld()
@@ -71,5 +86,16 @@ public class SatelliteInputController : MonoBehaviour
         }
 
         return newPlayerMousePosition;
+    }
+
+    private InputCommand CreateNewCommand(SATELLITE_COMMAND_TYPE commandType, float commandTime, Vector3 commandMousePosition)
+    {
+        InputCommand newCommand = new InputCommand();
+
+        newCommand.commandType = commandType;
+        newCommand.commandTime = commandTime;
+        newCommand.mouseInput = commandMousePosition;
+
+        return newCommand;
     }
 }

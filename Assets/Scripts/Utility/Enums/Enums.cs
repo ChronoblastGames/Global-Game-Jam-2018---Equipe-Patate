@@ -1,6 +1,6 @@
 ﻿
 #region
-    
+
 public enum PLAYER_NUMBER
 {
     NONE,
@@ -92,6 +92,17 @@ public enum INTERACTABLE_OBJECT_TYPE
     NONE,
     PHYSICS,
     ACTOR
+}
+
+#endregion
+
+#region SATELLITE
+
+public enum SATELLITE_COMMAND_TYPE
+{
+    NONE,
+    MOVE,
+    ROTATE
 }
 
 #endregion
