@@ -40,7 +40,7 @@ public class ScoreUI : MonoBehaviour
  
         distanceFromHomeText.text = transmission.currentTransmissionTime.ToString();
  
-        playerScore = Mathf.Round(Time.deltaTime * transmission.currentTransmissionTime);
+        playerScore = Time.deltaTime * transmission.playerDistanceFromOrigin;
         playerScoreText.text = playerScore.ToString();
     }
  

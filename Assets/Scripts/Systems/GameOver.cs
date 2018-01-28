@@ -10,10 +10,14 @@ public class GameOver : MonoBehaviour
     public void YouDied()
     {
         gameoverUI.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene(1);
+
+        Time.timeScale = 1f;
     }
 }

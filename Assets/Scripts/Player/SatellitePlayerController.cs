@@ -5,6 +5,8 @@ public class SatellitePlayerController : MonoBehaviour
 {
     private BackgroundMover backgroundMover;
 
+    private GameOver gameOverManager;
+
     [Header("Player Attributes")]
     private Vector3 mouseWorldPosition = Vector3.zero;
 
@@ -36,6 +38,8 @@ public class SatellitePlayerController : MonoBehaviour
     private void InitializePlayer()
     {
         backgroundMover = GameObject.FindGameObjectWithTag("Background").GetComponent<BackgroundMover>();
+
+        gameOverManager = GameObject.FindGameObjectWithTag("GameOverManager").GetComponent<GameOver>();
     }
 
     public void SetMousePosition(Vector3 newMousePosition)
@@ -80,7 +84,7 @@ public class SatellitePlayerController : MonoBehaviour
 
     public void PlayerDeath()
     {
-        Debug.Log("Player Death");
+        gameOverManager.YouDied();
     }
 
     private void PlayerReset()
